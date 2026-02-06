@@ -8,21 +8,13 @@ namespace ConsoleApp4
             int A = int.Parse(input[0]);
             int B = int.Parse(input[1]);
 
-            if ((B - 45) >= 0)
+            B -= 45;
+            if (B < 0)
             {
-                Console.WriteLine($"{A} {B - 45}");
+                B += 60;
+                A = (A == 0) ? 23 : A - 1;
             }
-            else if ((B - 45) < 0)
-            {
-                if (A == 0)
-                {
-                    Console.WriteLine($"23 {60 + (B - 45)}");
-                }
-                else
-                {
-                    Console.WriteLine($"{A - 1} {60 + (B - 45)}");
-                }
-            }
+            Console.WriteLine($"{A} {B}");
 
         }
     }
